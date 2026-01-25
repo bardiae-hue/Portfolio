@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bardia Eftekharifard | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    // Modal open/close
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    // Optional: close modal on ESC key
+    document.addEventListener("keydown", function(e) {
+      if(e.key === "Escape") {
+        document.querySelectorAll(".project-modal").forEach(modal => {
+          modal.style.display = "none";
+        });
+        document.body.style.overflow = "auto";
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">PORTFOLIO</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight">Bardia</span></h1>
+      <p>
+        I’m a computer science student who enjoys understanding systems from
+        low-level logic to building clean, efficient applications. Always curious, always improving.
+      </p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section">
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="resources/Soundy front page.png" alt="Soundy">
+        </div>
+        <div class="project-info">
+          <h3>Soundy</h3>
+          <p>Custom low-latency soundboard application.</p>
+          <p>Java</p>
+          <a href="javascript:void(0)" class="project-link" onclick="openModal('soundy')">
+            View Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="resources/image (1).png" alt="BHQ">
+        </div>
+        <div class="project-info">
+          <h3>BHQ</h3>
+          <p>Distraction-free self-improvement tracker.</p>
+          <p>Java</p>
+          <a href="javascript:void(0)" class="project-link" onclick="openModal('bhq')">
+            View Project →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="contact-card">
+      <h2 class="contact-name">Bardia Eftekharifard</h2>
+      <p class="contact-location">Toronto, ON</p>
+      <div class="contact-links">
+        <a href="tel:16477660474">647-766-0474</a>
+        <span>•</span>
+        <a href="mailto:bardiaeftekharifard@gmail.com">bardiaeftekharifard@gmail.com</a>
+        <span>•</span>
+        <a href="https://github.com/bardiae-hue" target="_blank">GitHub</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/bardia-eftekharifard" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- SOUNDY MODAL -->
+  <div class="project-modal" id="soundy">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('soundy')">×</span>
+      <h2>Soundy</h2>
+      <p class="modal-subtitle">Custom Soundboard Application</p>
+
+      <div class="modal-images">
+        <img src="resources/Soundy front page.png" alt="">
+        <img src="resources/soundy-2.png" alt="">
+        <img src="resources/soundy-3.png" alt="">
+      </div>
+
+      <p class="modal-description">
+        Soundy is a flexible, low-latency soundboard application built to
+        overcome the limitations of rigid audio trigger tools. Users can
+        dynamically build sound libraries, assign instant-play buttons,
+        and trigger audio efficiently. The system emphasizes performance,
+        modularity, and an intuitive UI.
+      </p>
+
+      <a href="https://github.com/bardiae-hue/Soundy" class="btn" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+  <!-- BHQ MODAL -->
+  <div class="project-modal" id="bhq">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('bhq')">×</span>
+      <h2>BHQ</h2>
+      <p class="modal-subtitle">Daily Self-Improvement Tracker</p>
+
+      <div class="modal-images">
+        <img src="resources/image (1).png" alt="">
+        <img src="resources/bhq-2.png" alt="">
+      </div>
+
+      <p class="modal-description">
+        BHQ is a minimalist self-improvement application designed to help
+        users build consistency. Users define personal goals and check in
+        daily to track progress. The interface removes unnecessary metrics
+        to keep focus on habits and discipline.
+      </p>
+
+      <a href="https://github.com/bardiae-hue/BHQ" class="btn" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+</body>
+</html>
