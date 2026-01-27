@@ -214,6 +214,18 @@
         </div>
       </div>
 
+      <div class="project-card fade-in">
+        <div class="project-image">
+        <img src="resources/dog.png" alt="Image Compressor">
+        </div>
+      <div class="project-info">
+      <div class="tech-stack"><span>Python</span></div>
+        <h3>Image Compressor</h3>
+        <p>A high-efficiency tool that utilizes Quadtree algorithms to reduce image file size.</p>
+        <a href="javascript:void(0)" class="highlight" style="text-decoration:none; font-weight:700" onclick="openModal('compressor')">View Case Study →</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -290,6 +302,24 @@
     </div>
   </div>
 
+  <div class="project-modal" id="compressor">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('compressor')">&times;</span>
+    <h2 style="margin-bottom: 0.5rem;">Image Compressor</h2>
+    <p style="color: var(--secondary-text); margin-bottom: 2rem;">Backend Optimization Tool</p>
+
+    <div class="slider" id="compressor-slider-container">
+      <button class="slider-btn prev" onclick="moveSlider('compressor', -1)">&#10094;</button>
+      <div class="slider-track" id="compressor-track">
+        <img src="resources/dog.png" alt="Dashboard">
+        <img src="resources/dog%20compressed.png" alt="Compression Stats">
+      </div>
+      <button class="slider-btn next" onclick="moveSlider('compressor', 1)">&#10095;</button>
+    </div>
+      <p style="margin-bottom: 2rem;">By combining python and the structure of quad-trees, I was able to implement an efficient adjustable image compressor.</p>
+    </div>
+  </div>
+
 
   <footer>
     <p>&copy; 2026 Bardia Eftekharifard</p>
@@ -351,7 +381,8 @@
     // --- Slider Logic ---
     let sliderPositions = {
       soundy: 0,
-      paint: 0
+      paint: 0,
+      compressor : 0
     };
 
     function moveSlider(projectId, direction) {
