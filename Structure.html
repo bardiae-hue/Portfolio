@@ -202,6 +202,18 @@
         </div>
       </div>
 
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <img src="resources/Paint%20applicaton.png" alt="Paint Application">
+        </div>
+        <div class="project-info">
+        <div class="tech-stack"><span>Java</span><span>HTML</span></div>
+          <h3>Paint Application</h3>
+          <p>A feature-rich drawing tool with custom brush engines, shape manipulation and accessibility features..</p>
+          <a href="javascript:void(0)" class="highlight" style="text-decoration:none; font-weight:700" onclick="openModal('paint')">View Case Study →</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -257,6 +269,27 @@
       <a href="https://github.com/bardiae-hue/BHQ" class="btn" target="_blank">View Repository</a>
     </div>
   </div>
+
+  <div class="project-modal" id="paint">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('paint')">&times;</span>
+    <h2 style="margin-bottom: 0.5rem;">Paint Application</h2>
+    <p style="color: var(--secondary-text); margin-bottom: 2rem;">Painting App</p>
+
+    <div class="slider" id="paint-slider-container">
+      <button class="slider-btn prev" onclick="moveSlider('paint', -1)">&#10094;</button>
+      <div class="slider-track" id="paint-track">
+        <img src="resources/Paint%20applicaton.png" alt="UI Overview">
+        <img src="resources/Color%20selector.png" alt="UI Overview">
+        <img src="resources/Acessibility%20feature.png" alt="UI Overview">
+      </div>
+        <button class="slider-btn next" onclick="moveSlider('paint', 1)">&#10095;</button>
+      </div>
+
+      <p style="margin-bottom: 2rem;">Collabrated in a group to create an application that focuses on event-driven programming and graphics rendering. It includes features like layers, custom color pickers, and various geometric shapes.</p>
+    </div>
+  </div>
+
 
   <footer>
     <p>&copy; 2026 Bardia Eftekharifard</p>
@@ -316,7 +349,10 @@
     animate();
 
     // --- Slider Logic ---
-    let sliderPositions = { soundy: 0 };
+    let sliderPositions = {
+      soundy: 0,
+      paint: 0
+    };
 
     function moveSlider(projectId, direction) {
       const track = document.getElementById(projectId + '-track');
