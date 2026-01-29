@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Bardia Eftekharifard | Portfolio</title>
   <meta name="description" content="Portfolio of Bardia Eftekharifard, computer science student and developer, showcasing projects like Soundy and BHQ.">
 
@@ -23,7 +23,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; }
 
     body {
-      background-color: var(--bg-color); /* Changed from gradient to solid so canvas can handle the background */
+      background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
       scroll-behavior: smooth;
@@ -44,7 +44,9 @@
     /* --- Navbar --- */
     .navbar {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 10%; position: fixed; top: 0; width: 100%;
+      /* Added Safe Area Insets for iPhone Notch */
+      padding: calc(1.2rem + env(safe-area-inset-top)) 10% 1.2rem 10%;
+      position: fixed; top: 0; width: 100%;
       background: var(--nav-bg); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.06); z-index: 1000;
     }
@@ -74,12 +76,22 @@
     /* --- Projects --- */
     .projects-section { padding: 8rem 10%; position: relative; z-index: 1; }
     .projects-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; }
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
+
+    .project-grid {
+      display: grid;
+      /* Changed to auto-fill and added justify-content to ensure centering on mobile */
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2.5rem;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     .project-card {
       background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(4px);
       border-radius: 16px; overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease;
+      width: 100%; /* Ensures card stays centered in its grid cell */
     }
     .project-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
     .project-image { aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
@@ -151,6 +163,14 @@
 
     .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .fade-in.active { opacity: 1; transform: translateY(0); }
+
+    /* Mobile Responsive Tweaks */
+    @media (max-width: 768px) {
+      .navbar { padding-left: 5%; padding-right: 5%; }
+      .projects-section, .contact-section { padding: 5rem 5%; }
+      .nav-links li { margin-left: 1.2rem; }
+      .logo { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -356,7 +376,6 @@
 
             ctx.beginPath();
             ctx.arc(sx, sy, r, 0, Math.PI * 2);
-            // Uses accent color with dynamic opacity based on "distance"
             ctx.fillStyle = `rgba(77, 163, 255, ${1 - this.z / canvas.width})`;
             ctx.fill();
         }
