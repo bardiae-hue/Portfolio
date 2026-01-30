@@ -44,7 +44,6 @@
     /* --- Navbar --- */
     .navbar {
       display: flex; justify-content: space-between; align-items: center;
-      /* Added Safe Area Insets for iPhone Notch */
       padding: calc(1.2rem + env(safe-area-inset-top)) 10% 1.2rem 10%;
       position: fixed; top: 0; width: 100%;
       background: var(--nav-bg); backdrop-filter: blur(12px);
@@ -90,7 +89,7 @@
       background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(4px);
       border-radius: 16px; overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease;
-      width: 100%; /* Ensures card stays centered in its grid cell */
+      width: 100%;
     }
     .project-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
     .project-image { aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
@@ -163,7 +162,6 @@
     .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .fade-in.active { opacity: 1; transform: translateY(0); }
 
-    /* Mobile Responsive Tweaks */
     @media (max-width: 768px) {
       .navbar { padding-left: 5%; padding-right: 5%; }
       .projects-section, .contact-section { padding: 5rem 5%; }
@@ -245,6 +243,18 @@
         </div>
       </div>
 
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <img src="resources/Othello.png" alt="Othello AI">
+        </div>
+        <div class="project-info">
+          <div class="tech-stack"><span>HTML</span><span>JavaScript</span><span>CSS</span></div>
+          <h3>Othello AI</h3>
+          <p>A strategic board game engine featuring a Minimax-based AI with positional weighting.</p>
+          <a href="javascript:void(0)" class="highlight" style="text-decoration:none; font-weight:700" onclick="openModal('othello')">View Case Study →</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -272,7 +282,6 @@
       <span class="close" onclick="closeModal('soundy')">&times;</span>
       <h2 style="margin-bottom: 0.5rem;">Soundy</h2>
       <p style="color: var(--secondary-text); margin-bottom: 2rem;">Low-Latency Soundboard Application</p>
-
       <div class="slider" id="soundy-slider-container">
         <button class="slider-btn prev" onclick="moveSlider('soundy', -1)">&#10094;</button>
         <div class="slider-track" id="soundy-track">
@@ -282,7 +291,6 @@
         </div>
         <button class="slider-btn next" onclick="moveSlider('soundy', 1)">&#10095;</button>
       </div>
-
       <p style="margin-bottom: 2rem;">Soundy is a modular audio tool designed for performance. It overcomes the limitations of traditional soundboards by offering dynamic library building and instant audio playback with minimal overhead.</p>
       <a href="https://github.com/bardiae-hue/Soundy" class="btn" target="_blank">View Repository</a>
     </div>
@@ -302,50 +310,63 @@
   </div>
 
   <div class="project-modal" id="paint">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('paint')">&times;</span>
-    <h2 style="margin-bottom: 0.5rem;">Paint Application</h2>
-    <p style="color: var(--secondary-text); margin-bottom: 2rem;">Painting App</p>
-
-    <div class="slider" id="paint-slider-container">
-      <button class="slider-btn prev" onclick="moveSlider('paint', -1)">&#10094;</button>
-      <div class="slider-track" id="paint-track">
-        <img src="resources/Paint%20applicaton.png" alt="UI Overview">
-        <img src="resources/Color%20selector.png" alt="UI Overview">
-        <img src="resources/Acessibility%20feature.png" alt="UI Overview">
-      </div>
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('paint')">&times;</span>
+      <h2 style="margin-bottom: 0.5rem;">Paint Application</h2>
+      <p style="color: var(--secondary-text); margin-bottom: 2rem;">Painting App</p>
+      <div class="slider" id="paint-slider-container">
+        <button class="slider-btn prev" onclick="moveSlider('paint', -1)">&#10094;</button>
+        <div class="slider-track" id="paint-track">
+          <img src="resources/Paint%20applicaton.png" alt="UI Overview">
+          <img src="resources/Color%20selector.png" alt="UI Overview">
+          <img src="resources/Acessibility%20feature.png" alt="UI Overview">
+        </div>
         <button class="slider-btn next" onclick="moveSlider('paint', 1)">&#10095;</button>
       </div>
-
       <p style="margin-bottom: 2rem;">Collabrated in a group to create an application that focuses on event-driven programming and graphics rendering. It includes features like layers, custom color pickers, and various geometric shapes.</p>
     </div>
   </div>
 
   <div class="project-modal" id="compressor">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('compressor')">&times;</span>
-    <h2 style="margin-bottom: 0.5rem;">Image Compressor</h2>
-    <p style="color: var(--secondary-text); margin-bottom: 2rem;">Backend Optimization Tool</p>
-
-    <div class="slider" id="compressor-slider-container">
-      <button class="slider-btn prev" onclick="moveSlider('compressor', -1)">&#10094;</button>
-      <div class="slider-track" id="compressor-track">
-        <img src="resources/dog.png" alt="Dashboard">
-        <img src="resources/dog%20compressed.png" alt="Compression Stats">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('compressor')">&times;</span>
+      <h2 style="margin-bottom: 0.5rem;">Image Compressor</h2>
+      <p style="color: var(--secondary-text); margin-bottom: 2rem;">Backend Optimization Tool</p>
+      <div class="slider" id="compressor-slider-container">
+        <button class="slider-btn prev" onclick="moveSlider('compressor', -1)">&#10094;</button>
+        <div class="slider-track" id="compressor-track">
+          <img src="resources/dog.png" alt="Dashboard">
+          <img src="resources/dog%20compressed.png" alt="Compression Stats">
+        </div>
+        <button class="slider-btn next" onclick="moveSlider('compressor', 1)">&#10095;</button>
       </div>
-      <button class="slider-btn next" onclick="moveSlider('compressor', 1)">&#10095;</button>
-    </div>
       <p style="margin-bottom: 2rem;">By combining python and the structure of quad-trees, I was able to implement an efficient adjustable image compressor.</p>
     </div>
   </div>
 
+  <div class="project-modal" id="othello">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('othello')">&times;</span>
+      <h2 style="margin-bottom: 0.5rem;">Othello AI</h2>
+      <p style="color: var(--secondary-text); margin-bottom: 2rem;">Game Engine & Heuristic AI</p>
+      <div class="slider" id="othello-slider-container">
+        <button class="slider-btn prev" onclick="moveSlider('othello', -1)">&#10094;</button>
+        <div class="slider-track" id="othello-track">
+          <img src="resources/Othello.png" alt="Gameplay Board">
+          <img src="resources/Othello2.png" alt="AI Strategy Matrix">
+        </div>
+        <button class="slider-btn next" onclick="moveSlider('othello', 1)">&#10095;</button>
+      </div>
+      <p style="margin-bottom: 2rem;">Built a fully functional Reversi engine that utilizes a directional scan algorithm for piece flipping. The AI opponent uses a strategic weight matrix to prioritize corners and edges, simulating advanced human tactics.</p>
+      <a href="https://github.com/bardiae-hue/othello-ai" class="btn" target="_blank">View Repository</a>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2026 Bardia Eftekharifard</p>
   </footer>
 
   <script>
-    // --- Particle Effect Script ---
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -356,23 +377,20 @@
     }
 
     class Particle {
-        constructor() {
-            this.reset();
-        }
+        constructor() { this.reset(); }
         reset() {
             this.x = (Math.random() - 0.5) * canvas.width;
             this.y = (Math.random() - 0.5) * canvas.height;
             this.z = Math.random() * canvas.width;
         }
         update() {
-            this.z -= 2; // Speed of loop
+            this.z -= 2;
             if (this.z <= 0) this.reset();
         }
         draw() {
             let sx = (this.x / this.z) * canvas.width + canvas.width / 2;
             let sy = (this.y / this.z) * canvas.height + canvas.height / 2;
             let r = (1 - this.z / canvas.width) * 1.5;
-
             ctx.beginPath();
             ctx.arc(sx, sy, r, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(77, 163, 255, ${1 - this.z / canvas.width})`;
@@ -385,10 +403,7 @@
     function animate() {
         ctx.fillStyle = '#0d1117';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-            p.update();
-            p.draw();
-        });
+        particles.forEach(p => { p.update(); p.draw(); });
         requestAnimationFrame(animate);
     }
 
@@ -396,28 +411,17 @@
     initCanvas();
     animate();
 
-    // --- Slider Logic ---
-    let sliderPositions = {
-      soundy: 0,
-      paint: 0,
-      compressor : 0
-    };
+    let sliderPositions = { soundy: 0, paint: 0, compressor: 0, othello: 0 };
 
     function moveSlider(projectId, direction) {
       const track = document.getElementById(projectId + '-track');
       const slides = track.querySelectorAll('img');
-      const totalSlides = slides.length;
-
       sliderPositions[projectId] += direction;
-
-      if (sliderPositions[projectId] >= totalSlides) sliderPositions[projectId] = 0;
-      if (sliderPositions[projectId] < 0) sliderPositions[projectId] = totalSlides - 1;
-
-      const offset = sliderPositions[projectId] * -100;
-      track.style.transform = `translateX(${offset}%)`;
+      if (sliderPositions[projectId] >= slides.length) sliderPositions[projectId] = 0;
+      if (sliderPositions[projectId] < 0) sliderPositions[projectId] = slides.length - 1;
+      track.style.transform = `translateX(${sliderPositions[projectId] * -100}%)`;
     }
 
-    // --- Modal Logic ---
     function openModal(id) {
       document.getElementById(id).classList.add('show');
       document.body.style.overflow = 'hidden';
@@ -428,20 +432,16 @@
       document.body.style.overflow = 'auto';
     }
 
-    window.onclick = function(event) {
+    window.onclick = event => {
       if (event.target.classList.contains('project-modal')) {
         event.target.classList.remove('show');
         document.body.style.overflow = 'auto';
       }
     }
 
-    // --- Intersection Observer ---
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
