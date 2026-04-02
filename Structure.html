@@ -267,6 +267,15 @@
     </div>
 
     <div class="fade-in">
+      <div class="project-row" onclick="openModal('columns')">
+        <div>
+          <div class="project-name">Columns (Assembly Game)</div>
+          <div class="project-desc">Real-time assembly implementation of Columns with gravity, scoring, and pause system</div>
+        </div>
+        <div class="project-stack">Assembly · MIPS</div>
+        <div class="project-year">2026</div>
+        <div class="project-arrow">↗</div>
+      </div>
       <div class="project-row" onclick="openModal('othello')">
         <div><div class="project-name">Othello AI</div><div class="project-desc">Full game engine with Minimax AI — 40% increase in user engagement</div></div>
         <div class="project-stack">HTML · JS · CSS</div><div class="project-year">2025</div><div class="project-arrow">↗</div>
@@ -281,11 +290,11 @@
       </div>
       <div class="project-row" onclick="openModal('soundy')">
         <div><div class="project-name">Soundy</div><div class="project-desc">Low-latency soundboard with dynamic library and instant audio playback</div></div>
-        <div class="project-stack">Java</div><div class="project-year">2024</div><div class="project-arrow">↗</div>
+        <div class="project-stack">Java</div><div class="project-year">2025</div><div class="project-arrow">↗</div>
       </div>
       <div class="project-row" onclick="openModal('bhq')">
         <div><div class="project-name">BHQ</div><div class="project-desc">Minimalist personal discipline and habit-tracking application</div></div>
-        <div class="project-stack">Java</div><div class="project-year">2024</div><div class="project-arrow">↗</div>
+        <div class="project-stack">Java</div><div class="project-year">2025</div><div class="project-arrow">↗</div>
       </div>
     </div>
   </section>
@@ -371,6 +380,34 @@
       <div class="modal-actions">
         <a href="https://youtu.be/3dnyiRTRwSM" target="_blank" class="btn btn-sm btn-video">Watch Demo</a>
         <a href="https://github.com/pyGuy152/Alignfolio" target="_blank" class="btn btn-sm btn-primary">View Repository</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-modal" id="modal-columns">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('columns')">✕</button>
+
+      <div class="modal-eyebrow">Assembly · Systems · CSC258</div>
+      <h2 class="modal-title">Columns</h2>
+
+      <div class="slider">
+        <div class="slider-track">
+          <img src="resources/columns.png" alt="Columns Game">
+        </div>
+      </div>
+
+      <p class="modal-desc">
+        Implemented a real-time version of the Columns game entirely in assembly.
+        Designed and built core game mechanics including gravity-based piece movement,
+        score tracking, and a pause system. Focused on low-level control flow, memory
+        management, and efficient state updates under hardware constraints.
+      </p>
+
+      <div class="modal-actions">
+        <a href="https://youtu.be/Cj0p69TdCw8" target="_blank" class="btn btn-sm btn-video">
+          Watch Demo
+        </a>
       </div>
     </div>
   </div>
